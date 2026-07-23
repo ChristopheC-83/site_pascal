@@ -1,10 +1,12 @@
 import Link from "next/link";
 
 const navigation = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "Prestations", href: "#prestations" },
-  { label: "L’entreprise", href: "#entreprise" },
-  { label: "Contact", href: "#contact" },
+  { label: "Accueil", href: "/" },
+  { label: "Antennes TV", href: "/prestations/antennes-reception-tv" },
+  { label: "Visiophones", href: "/prestations/visiophones-interphones" },
+  { label: "Portails & automatismes", href: "/prestations/motorisation-portail" },
+  { label: "Alarmes & sécurité", href: "/prestations/alarmes-securite" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 function NavigationLinks({ mobile = false }: { mobile?: boolean }) {
@@ -28,7 +30,7 @@ export function SiteHeader() {
     <header className="relative z-30 bg-white">
       <div className="bg-slate-950 text-white">
         <div className="mx-auto flex min-h-24 max-w-7xl items-center justify-between gap-5 px-5 py-5 sm:px-8 lg:px-10">
-          <Link href="#accueil" className="group min-w-0" aria-label="Pascal Albert, accueil">
+          <Link href="/" className="group min-w-0" aria-label="Pascal Albert, accueil">
             <span className="block font-heading text-xl font-bold tracking-[0.08em] sm:text-2xl">
               PASCAL <span className="text-amber-500">ALBERT</span>
             </span>
@@ -52,9 +54,9 @@ export function SiteHeader() {
       </div>
 
       <div className="border-b border-slate-200 bg-white shadow-[0_5px_20px_rgba(15,23,42,0.05)]">
-        <nav className="mx-auto hidden max-w-7xl items-center gap-10 px-8 lg:flex lg:px-10" aria-label="Navigation principale">
+        <nav className="mx-auto hidden max-w-7xl items-center gap-6 px-8 lg:flex lg:px-10 xl:gap-8" aria-label="Navigation principale">
           <NavigationLinks />
-          <span className="ml-auto text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+          <span className="ml-auto hidden text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 xl:block">
             Uchaud · Nîmes · Montpellier
           </span>
         </nav>
