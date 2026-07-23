@@ -1,65 +1,124 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import { ServiceCard } from "@/components/service-card";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { services } from "@/data/services";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <SiteHeader />
+      <main>
+        <section id="accueil" className="relative isolate flex min-h-[42rem] items-end overflow-hidden sm:min-h-[45rem] lg:min-h-[calc(100svh-9.5rem)]">
+          <Image
+            src="/images/Entrée moderne avec portail contemporain.png"
+            alt="Entrée d'une maison équipée d'un portail automatique"
+            fill
+            priority
+            sizes="100vw"
+            className="-z-20 object-cover object-center"
+          />
+          <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(8,15,29,0.93)_0%,rgba(8,15,29,0.72)_48%,rgba(8,15,29,0.2)_100%)]" />
+
+          <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-28 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24">
+            <div className="max-w-3xl">
+              <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-amber-400 sm:text-sm">
+                <span className="h-px w-10 bg-amber-400" aria-hidden="true" />
+                Artisan à Uchaud
+              </p>
+              <h1 className="font-heading text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+                Vos équipements basse tension, installés et dépannés par un spécialiste
+              </h1>
+              <p className="mt-6 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg sm:leading-8">
+                Antennes, visiophones, motorisations, automatismes et systèmes de sécurité autour de Nîmes et Montpellier.
+              </p>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <Link href="#contact" className="inline-flex min-h-14 items-center justify-center bg-amber-500 px-7 text-sm font-bold uppercase tracking-[0.1em] text-slate-950 transition-colors hover:bg-amber-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                  Demander un devis
+                </Link>
+                <a href="tel:+33607568538" className="inline-flex min-h-14 items-center justify-center border border-white/60 bg-slate-950/20 px-7 text-sm font-bold tracking-[0.1em] text-white transition-colors hover:bg-white hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                  06 07 56 85 38
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="prestations" className="scroll-mt-8 bg-stone-50 py-20 sm:py-24 lg:py-28">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <div className="mb-10 grid gap-5 lg:grid-cols-2 lg:items-end lg:gap-16">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">Savoir-faire</p>
+                <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">Nos prestations</h2>
+              </div>
+              <p className="max-w-xl text-base leading-7 text-slate-600 lg:justify-self-end">
+                Des solutions fiables, installées avec soin et adaptées à votre habitation ou à vos locaux professionnels.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-6">
+              {services.map((service, index) => (
+                <div key={service.slug} className={index < 3 ? "xl:col-span-2" : "xl:col-span-3"}>
+                  <ServiceCard service={service} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="entreprise" className="scroll-mt-8 bg-white py-20 sm:py-24">
+          <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20 lg:px-10">
+            <div className="relative min-h-80 overflow-hidden bg-slate-200 sm:min-h-[28rem]">
+              <Image
+                src="/images/Toit moderne sous ciel bleu clair.png"
+                alt="Vue sur les toits du secteur d'intervention"
+                fill
+                sizes="(max-width: 1023px) 100vw, 42vw"
+                className="object-cover"
+              />
+              <div className="absolute bottom-0 left-0 bg-slate-950 px-6 py-5 text-white">
+                <span className="block text-xs font-bold uppercase tracking-[0.16em] text-amber-400">Basé à</span>
+                <span className="mt-1 block font-heading text-2xl font-bold">Uchaud</span>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">Proximité</p>
+              <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Un artisan proche de vos projets</h2>
+              <p className="mt-6 text-base leading-8 text-slate-600">
+                Installé à Uchaud, Pascal ALBERT intervient principalement entre Nîmes et Montpellier pour vos installations et dépannages en basse tension.
+              </p>
+              <p className="mt-4 text-base leading-8 text-slate-600">
+                Les interventions sont réalisées dans le Gard et l’Hérault selon la nature et la localisation de votre besoin.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-2" aria-label="Principaux secteurs d'intervention">
+                {["Uchaud", "Secteur Nîmes", "Secteur Montpellier", "Gard & Hérault"].map((area) => (
+                  <span key={area} className="border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700">{area}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="scroll-mt-8 bg-amber-500">
+          <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-14 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-16">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-700">Parlons de votre besoin</p>
+              <h2 className="mt-2 font-heading text-3xl font-bold text-slate-950 sm:text-4xl">Un projet ou un dépannage ?</h2>
+              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-800">
+                Contactez directement Pascal ALBERT pour échanger sur votre installation ou demander un devis.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+              <a href="tel:+33607568538" className="inline-flex min-h-14 items-center justify-center bg-slate-950 px-6 text-sm font-bold tracking-[0.08em] text-white transition-colors hover:bg-slate-800">Appeler Pascal ALBERT</a>
+              <a href="mailto:ent.albertpascal@hotmail.fr" className="inline-flex min-h-14 items-center justify-center border-2 border-slate-950 px-6 text-sm font-bold text-slate-950 transition-colors hover:bg-slate-950 hover:text-white">Nous écrire</a>
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
+      <SiteFooter />
+    </>
   );
 }
