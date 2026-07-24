@@ -61,7 +61,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           ))}
         </div>
         <ServicePricing prices={service.pricing} />
-        <ServiceCta text={service.ctaText} />
+        <ServiceCta text={service.ctaText} serviceSlug={service.slug} />
       </main>
       <SiteFooter />
     </>

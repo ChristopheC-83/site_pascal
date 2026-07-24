@@ -6,7 +6,7 @@ const navigation = [
   { label: "Visiophones", href: "/prestations/visiophones-interphones" },
   { label: "Portails & automatismes", href: "/prestations/motorisation-portail" },
   { label: "Alarmes & sécurité", href: "/prestations/alarmes-securite" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function NavigationLinks({ mobile = false }: { mobile?: boolean }) {

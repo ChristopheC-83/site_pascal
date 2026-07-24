@@ -17,7 +17,6 @@ export function SiteFooter() {
           <p className="mb-2 font-bold uppercase tracking-[0.12em] text-white">Coordonnées</p>
           <p>4 rue de la Manzanille<br />30620 UCHAUD</p>
           <a className="block hover:text-white" href="tel:+33607568538">06 07 56 85 38</a>
-          <a className="block hover:text-white" href="tel:+33466513494">04 66 51 34 94</a>
           <a className="mt-1 block break-all hover:text-white" href="mailto:ent.albertpascal@hotmail.fr">
             ent.albertpascal@hotmail.fr
           </a>

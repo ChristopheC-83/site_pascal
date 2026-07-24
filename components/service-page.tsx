@@ -41,7 +41,7 @@ export function ServiceHero({ service }: { service: DetailedService }) {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="#demande-de-devis"
+              href={`/contact?service=${service.slug}`}
               className="inline-flex min-h-14 items-center justify-center bg-amber-500 px-7 text-sm font-bold uppercase tracking-[0.1em] text-slate-950 transition-colors hover:bg-amber-400"
             >
               Demander un devis
@@ -130,9 +130,9 @@ export function ServicePricing({ prices }: { prices: ServicePrice[] }) {
   );
 }
 
-export function ServiceCta({ text }: { text: string }) {
+export function ServiceCta({ text, serviceSlug }: { text: string; serviceSlug: string }) {
   return (
-    <section id="demande-de-devis" className="scroll-mt-8 bg-amber-500">
+    <section className="bg-amber-500">
       <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-14 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-16">
         <div>
           <h2 className="font-heading text-3xl font-bold text-slate-950 sm:text-4xl">
@@ -141,12 +141,12 @@ export function ServiceCta({ text }: { text: string }) {
           <p className="mt-3 max-w-2xl text-base leading-7 text-slate-800">{text}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
-          <a
-            href="mailto:ent.albertpascal@hotmail.fr"
+          <Link
+            href={`/contact?service=${serviceSlug}`}
             className="inline-flex min-h-14 items-center justify-center bg-slate-950 px-6 text-sm font-bold text-white transition-colors hover:bg-slate-800"
           >
             Demander un devis
-          </a>
+          </Link>
           <a
             href={phoneHref}
             className="inline-flex min-h-14 items-center justify-center border-2 border-slate-950 px-6 text-sm font-bold text-slate-950 transition-colors hover:bg-slate-950 hover:text-white"

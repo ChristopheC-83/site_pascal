@@ -35,7 +35,7 @@ export default function Home() {
                 Antennes, visiophones, motorisations, automatismes et systèmes de sécurité autour de Nîmes et Montpellier.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <Link href="#contact" className="inline-flex min-h-14 items-center justify-center bg-amber-500 px-7 text-sm font-bold uppercase tracking-[0.1em] text-slate-950 transition-colors hover:bg-amber-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                <Link href="/contact" className="inline-flex min-h-14 items-center justify-center bg-amber-500 px-7 text-sm font-bold uppercase tracking-[0.1em] text-slate-950 transition-colors hover:bg-amber-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                   Demander un devis
                 </Link>
                 <a href="tel:+33607568538" className="inline-flex min-h-14 items-center justify-center border border-white/60 bg-slate-950/20 px-7 text-sm font-bold tracking-[0.1em] text-white transition-colors hover:bg-white hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
               <a href="tel:+33607568538" className="inline-flex min-h-14 items-center justify-center bg-slate-950 px-6 text-sm font-bold tracking-[0.08em] text-white transition-colors hover:bg-slate-800">Appeler Pascal ALBERT</a>
-              <a href="mailto:ent.albertpascal@hotmail.fr" className="inline-flex min-h-14 items-center justify-center border-2 border-slate-950 px-6 text-sm font-bold text-slate-950 transition-colors hover:bg-slate-950 hover:text-white">Nous écrire</a>
+              <Link href="/contact" className="inline-flex min-h-14 items-center justify-center border-2 border-slate-950 px-6 text-sm font-bold text-slate-950 transition-colors hover:bg-slate-950 hover:text-white">Nous écrire</Link>
             </div>
           </div>
         </section>
