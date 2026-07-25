@@ -76,7 +76,7 @@ export function ContactForm({ initialService }: ContactFormProps) {
   }
 
   const fieldClassName =
-    "mt-2 min-h-12 w-full border border-slate-300 bg-white px-4 text-base text-slate-950 outline-none transition focus:border-amber-600 focus:ring-2 focus:ring-amber-600/20";
+    "mt-2 min-h-12 w-full border border-slate-400 bg-white px-4 text-base text-slate-950 outline-none transition focus:border-amber-600 focus:ring-2 focus:ring-amber-600/20";
   const errorClassName = "mt-2 text-sm font-medium text-red-700";
 
   return (

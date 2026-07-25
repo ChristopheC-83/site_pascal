@@ -30,12 +30,17 @@ export function SiteHeader() {
     <header className="relative z-30 bg-white">
       <div className="bg-slate-950 text-white">
         <div className="mx-auto flex min-h-24 max-w-7xl items-center justify-between gap-5 px-5 py-5 sm:px-8 lg:px-10">
-          <Link href="/" className="group min-w-0" aria-label="Pascal Albert, accueil">
+          <Link
+            href="/"
+            className="group min-w-0"
+            aria-label="Pascal Albert, accueil"
+          >
             <span className="block font-heading text-xl font-bold tracking-[0.08em] sm:text-2xl">
               PASCAL <span className="text-amber-500">ALBERT</span>
             </span>
             <span className="mt-1 block text-[0.68rem] font-medium uppercase tracking-[0.14em] text-slate-300 sm:text-xs">
-              Basse tension <span aria-hidden="true">•</span> Automatismes <span aria-hidden="true">•</span> Sécurité
+              Basse tension <span aria-hidden="true">•</span> Automatismes{" "}
+              <span aria-hidden="true">•</span> Sécurité
             </span>
           </Link>
 
@@ -45,7 +50,7 @@ export function SiteHeader() {
             </span>
             <a
               href="tel:+33607568538"
-              className="mt-1 inline-flex min-h-11 items-center rounded-sm bg-amber-500 px-4 text-base font-bold tracking-wide text-slate-950 transition-colors hover:bg-amber-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:bg-transparent sm:px-0 sm:text-xl sm:text-white sm:hover:text-amber-400"
+              className="mt-1 inline-flex min-h-11 items-center rounded-sm bg-amber-500 px-4 text-base font-bold tracking-wide text-slate-950 transition-colors hover:bg-amber-400 hover:text-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:bg-transparent  sm:text-xl sm:text-white "
             >
               06 07 56 85 38
             </a>
@@ -54,7 +59,10 @@ export function SiteHeader() {
       </div>
 
       <div className="border-b border-slate-200 bg-white shadow-[0_5px_20px_rgba(15,23,42,0.05)]">
-        <nav className="mx-auto hidden max-w-7xl items-center gap-6 px-8 lg:flex lg:px-10 xl:gap-8" aria-label="Navigation principale">
+        <nav
+          className="mx-auto hidden max-w-7xl items-center gap-6 px-8 lg:flex lg:px-10 xl:gap-8"
+          aria-label="Navigation principale"
+        >
           <NavigationLinks />
           <span className="ml-auto hidden text-xs font-semibold uppercase tracking-[0.14em] text-slate-500 xl:block">
             Uchaud · Nîmes · Montpellier
@@ -65,12 +73,15 @@ export function SiteHeader() {
           <summary className="mx-auto flex min-h-14 max-w-7xl cursor-pointer list-none items-center justify-between px-5 text-sm font-semibold uppercase tracking-[0.12em] text-slate-800 marker:hidden sm:px-8">
             Navigation
             <span className="relative h-4 w-5" aria-hidden="true">
-              <span className="absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform group-open:translate-y-[7px] group-open:rotate-45" />
-              <span className="absolute left-0 top-[7px] h-0.5 w-5 bg-current transition-opacity group-open:opacity-0" />
-              <span className="absolute left-0 top-[14px] h-0.5 w-5 bg-current transition-transform group-open:-translate-y-[7px] group-open:-rotate-45" />
+              <span className="absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform group-open:translate-y-1.75 group-open:rotate-45" />
+              <span className="absolute left-0 top-1.75 h-0.5 w-5 bg-current transition-opacity group-open:opacity-0" />
+              <span className="absolute left-0 top-3.5 h-0.5 w-5 bg-current transition-transform group-open:-translate-y-1.75 group-open:-rotate-45" />
             </span>
           </summary>
-          <nav className="flex flex-col border-t border-slate-200 bg-slate-50" aria-label="Navigation mobile">
+          <nav
+            className="flex flex-col border-t border-slate-200 bg-slate-50"
+            aria-label="Navigation mobile"
+          >
             <NavigationLinks mobile />
           </nav>
         </details>
