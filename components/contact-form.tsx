@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useRef, useState } from "react";
+import { toast } from "sonner";
 
 import { services } from "@/data/services";
 
@@ -21,11 +22,12 @@ export function ContactForm({ initialService }: ContactFormProps) {
   const [status, setStatus] = useState<SubmissionStatus>("idle");
   const [statusMessage, setStatusMessage] = useState("");
   const [formStartedAt, setFormStartedAt] = useState(() => Date.now());
+  const isSubmittingRef = useRef(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (status === "submitting") return;
+    if (isSubmittingRef.current) return;
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -78,6 +80,7 @@ export function ContactForm({ initialService }: ContactFormProps) {
     };
 
     setErrors({});
+    isSubmittingRef.current = true;
     setStatus("submitting");
     setStatusMessage("");
 
@@ -98,11 +101,20 @@ export function ContactForm({ initialService }: ContactFormProps) {
           result.message ||
             "L’envoi a échoué. Vous pouvez également nous contacter par téléphone.",
         );
+        toast.error("\u00c9chec de l\u2019envoi", {
+          description:
+            "Votre demande n\u2019a pas pu \u00eatre envoy\u00e9e. Vous pouvez appeler le 06 07 56 85 38.",
+        });
         return;
       }
 
       setStatus("success");
       setStatusMessage(result.message || "Votre demande a bien été envoyée.");
+      toast.success("Demande envoy\u00e9e", {
+        description:
+          result.message ||
+          "Votre demande a bien \u00e9t\u00e9 transmise. Pascal Albert pourra vous recontacter.",
+      });
       form.reset();
       setSelectedService("");
       setFormStartedAt(Date.now());
@@ -111,6 +123,12 @@ export function ContactForm({ initialService }: ContactFormProps) {
       setStatusMessage(
         "L’envoi a échoué. Vous pouvez également nous contacter par téléphone.",
       );
+      toast.error("\u00c9chec de l\u2019envoi", {
+        description:
+          "Votre demande n\u2019a pas pu \u00eatre envoy\u00e9e. Vous pouvez appeler le 06 07 56 85 38.",
+      });
+    } finally {
+      isSubmittingRef.current = false;
     }
   }
 
