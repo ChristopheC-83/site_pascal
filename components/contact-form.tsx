@@ -154,7 +154,7 @@ export function ContactForm({ initialService }: ContactFormProps) {
         </div>
       )}
 
-      <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+      <div className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor="website">Site internet</label>
         <input
           id="website"

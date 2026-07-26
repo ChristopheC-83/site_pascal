@@ -39,7 +39,7 @@ export default function Home() {
       />
       <SiteHeader />
       <main>
-        <section id="accueil" className="relative isolate flex min-h-[42rem] items-end overflow-hidden sm:min-h-[45rem] lg:min-h-[calc(100svh-9.5rem)]">
+        <section id="accueil" className="relative isolate flex min-h-168 items-end overflow-hidden sm:min-h-180 lg:min-h-[calc(100svh-9.5rem)]">
           <Image
             src="/images/Entrée moderne avec portail contemporain.png"
             alt="Entrée d'une maison équipée d'un portail automatique"
@@ -63,10 +63,10 @@ export default function Home() {
                 Antennes, visiophones, motorisations, automatismes et systèmes de sécurité autour de Nîmes et Montpellier.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <Link href="/contact" className="inline-flex min-h-14 items-center justify-center bg-amber-500 px-7 text-sm font-bold uppercase tracking-[0.1em] text-slate-950 transition-colors hover:bg-amber-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                <Link href="/contact" className="inline-flex min-h-14 items-center justify-center bg-amber-500 px-7 text-sm font-bold uppercase tracking-widest text-slate-950 transition-colors hover:bg-amber-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                   Demander un devis
                 </Link>
-                <a href="tel:+33607568538" className="inline-flex min-h-14 items-center justify-center border border-white/60 bg-slate-950/20 px-7 text-sm font-bold tracking-[0.1em] text-white transition-colors hover:bg-white hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                <a href="tel:+33607568538" className="inline-flex min-h-14 items-center justify-center border border-white/60 bg-slate-950/20 px-7 text-sm font-bold tracking-widest text-white transition-colors hover:bg-white hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                   06 07 56 85 38
                 </a>
               </div>
@@ -98,7 +98,7 @@ export default function Home() {
 
         <section id="entreprise" className="scroll-mt-8 bg-white py-20 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-20 lg:px-10">
-            <div className="relative min-h-80 overflow-hidden bg-slate-200 sm:min-h-[28rem]">
+            <div className="relative min-h-80 overflow-hidden bg-slate-200 sm:min-h-112">
               <Image
                 src="/images/Toit moderne sous ciel bleu clair.png"
                 alt="Vue sur les toits du secteur d'intervention"
