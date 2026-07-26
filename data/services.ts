@@ -31,14 +31,14 @@ export const services: Service[] = [
     image: "/images/Mécanisme moderne de portail coulissant.png",
     imageAlt: "Mécanisme de motorisation d'un portail coulissant",
   },
-  {
-    slug: "automatismes",
-    title: "Automatismes",
-    shortDescription:
-      "Mise en service, entretien et réparation de vos systèmes automatisés.",
-    image: "/images/Réparation du boîtier de contrôle automatique.png",
-    imageAlt: "Intervention technique sur un boîtier de contrôle automatique",
-  },
+  // {
+  //   slug: "automatismes",
+  //   title: "Automatismes",
+  //   shortDescription:
+  //     "Mise en service, entretien et réparation de vos systèmes automatisés.",
+  //   image: "/images/Réparation du boîtier de contrôle automatique.png",
+  //   imageAlt: "Intervention technique sur un boîtier de contrôle automatique",
+  // },
   {
     slug: "alarmes-securite",
     title: "Alarmes & sécurité",
