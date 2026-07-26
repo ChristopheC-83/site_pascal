@@ -11,7 +11,7 @@ const phoneHref = "tel:+33607568538";
 
 export function ServiceHero({ service }: { service: DetailedService }) {
   return (
-    <section className="relative isolate flex min-h-[38rem] items-end overflow-hidden sm:min-h-[42rem]">
+    <section className="relative isolate flex min-h-152 items-end overflow-hidden sm:min-h-168">
       <Image
         src={service.hero.image}
         alt={service.hero.imageAlt}
@@ -42,13 +42,13 @@ export function ServiceHero({ service }: { service: DetailedService }) {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href={`/contact?service=${service.slug}`}
-              className="inline-flex min-h-14 items-center justify-center bg-amber-500 px-7 text-sm font-bold uppercase tracking-[0.1em] text-slate-950 transition-colors hover:bg-amber-400"
+              className="inline-flex min-h-14 items-center justify-center bg-amber-500 px-7 text-sm font-bold uppercase tracking-widest text-slate-950 transition-colors hover:bg-amber-400"
             >
               Demander un devis
             </Link>
             <a
               href={phoneHref}
-              className="inline-flex min-h-14 items-center justify-center border border-white/60 bg-slate-950/20 px-7 text-sm font-bold tracking-[0.1em] text-white transition-colors hover:bg-white hover:text-slate-950"
+              className="inline-flex min-h-14 items-center justify-center border border-white/60 bg-slate-950/20 px-7 text-sm font-bold tracking-widest text-white transition-colors hover:bg-white hover:text-slate-950"
             >
               06 07 56 85 38
             </a>
@@ -70,7 +70,7 @@ export function ServiceContentSection({
     <section className="bg-white py-10 sm:py-14 lg:py-16">
       <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16 lg:px-10">
         <div
-          className={`relative min-h-80 overflow-hidden bg-slate-200 sm:min-h-[30rem] ${
+          className={`relative min-h-80 overflow-hidden bg-slate-200 sm:min-h-120 ${
             imageRight ? "lg:order-2" : ""
           }`}
         >

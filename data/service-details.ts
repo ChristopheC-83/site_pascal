@@ -32,207 +32,257 @@ export type DetailedService = Service & EditorialDetails;
 const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
   "antennes-reception-tv": {
     hero: {
-      tagline: "Une réception nette et stable dans toute la maison",
-      description: "Installation, orientation et diagnostic de vos équipements de réception TV autour de Nîmes et Montpellier.",
+      tagline: "Une réception TV fiable, adaptée à votre installation",
+      description:
+        "J’installe, règle et dépanne vos équipements de réception TV autour d’Uchaud, entre Nîmes et Montpellier.",
       image: "/images/Antenne TV sur toit ensoleillé.png",
       imageAlt: "Antenne TV installée sur une toiture ensoleillée",
     },
+
     sections: [
       {
         eyebrow: "Installation",
-        title: "Une antenne adaptée à votre habitation",
-        text: "Une installation neuve ou le remplacement d’une antenne vieillissante commence par l’étude de la toiture, de l’environnement et du réseau intérieur. L’objectif est d’obtenir un signal régulier avec une fixation propre et durable.",
+        title: "Une antenne adaptée à votre logement",
+        text: "Pour une installation neuve ou le remplacement d’une antenne vieillissante, j’étudie la toiture, l’environnement et le réseau intérieur existant. L’objectif est d’obtenir une réception fiable avec une fixation propre, solide et adaptée à votre habitation.",
         image: "/images/Installation de satellite sur toiture.png",
         imageAlt: "Installation d'un équipement de réception sur une toiture",
       },
       {
-        eyebrow: "Diagnostic",
-        title: "Retrouver une réception TNT fiable",
-        text: "Image qui se fige, chaînes absentes ou réception différente selon les pièces : l’orientation, le câblage, les raccordements ou un équipement inadapté peuvent être en cause. Un diagnostic permet d’intervenir sur l’origine réelle du problème.",
-        image: "/images/Dish parabolique sur mur moderne.png",
+        eyebrow: "Dépannage",
+        title: "Identifier l’origine des problèmes de réception",
+        text: "Image qui se fige, chaînes absentes ou réception différente selon les pièces : le problème peut venir de l’orientation de l’antenne, du câblage, des raccordements ou d’un équipement devenu inadapté. Je contrôle l’installation afin d’intervenir sur la cause réelle de la panne.",
+        image: "/images/Toit moderne sous ciel bleu clair.png",
         imageAlt: "Parabole fixée sur le mur d'une maison moderne",
       },
       {
         eyebrow: "Distribution",
-        title: "Acheminer le signal vers plusieurs pièces",
-        text: "Le réseau existant peut être vérifié et réorganisé pour alimenter plusieurs téléviseurs sans dégrader inutilement le signal. Les raccordements, répartiteurs et câbles sont contrôlés avant toute adaptation.",
+        title: "Distribuer le signal dans plusieurs pièces",
+        text: "Je peux vérifier et adapter le réseau existant pour alimenter plusieurs téléviseurs tout en préservant la qualité du signal. Les câbles, prises, raccordements et répartiteurs sont contrôlés avant de proposer les modifications nécessaires.",
         image: "/images/Toit moderne sous ciel bleu.png",
         imageAlt: "Toiture d'une habitation sous un ciel bleu",
       },
     ],
+
     pricing: [
-      { label: "Diagnostic de réception", price: "À partir de 90 €", description: "Contrôle du signal et de l’installation existante." },
-      { label: "Remplacement d’antenne", price: "250 € à 650 €", description: "Selon l’accès, la fixation et le matériel nécessaire." },
-      { label: "Distribution intérieure", price: "150 € à 450 €", description: "Adaptation du réseau pour une ou plusieurs pièces." },
+      {
+        label: "Diagnostic de réception",
+        price: "À partir de 90 €",
+        description:
+          "Déplacement, contrôle du signal, de l’antenne et du réseau intérieur existant.",
+      },
+      {
+        label: "Remplacement d’antenne",
+        price: "250 € à 650 €",
+        description:
+          "Selon l’accès à la toiture, la fixation, le câblage et le matériel nécessaire.",
+      },
+      {
+        label: "Adaptation du réseau TV",
+        price: "À partir de 150 €",
+        description:
+          "Ajout ou modification de prises, câbles, raccordements ou répartiteurs.",
+      },
     ],
-    ctaText: "Faites vérifier votre installation pour retrouver une réception TV stable et adaptée à votre logement.",
+
+    ctaText:
+      "Décrivez votre problème de réception ou votre projet d’installation afin d’obtenir un premier avis et un devis adapté.",
+
     seo: {
-      title: "Installation et dépannage d’antenne TV entre Nîmes et Montpellier",
-      description: "Installation, remplacement, réglage et dépannage d’antenne TV et de réception TNT entre Nîmes et Montpellier, autour d’Uchaud et selon la configuration existante.",
+      title:
+        "Installation et dépannage d’antenne TV entre Nîmes et Montpellier",
+      description:
+        "Installation, remplacement, réglage et dépannage d’antenne TV et de réception TNT entre Nîmes et Montpellier, autour d’Uchaud.",
     },
   },
   "visiophones-interphones": {
     hero: {
       tagline: "Identifiez vos visiteurs avant d’ouvrir",
-      description: "Installation et remplacement de systèmes d’interphonie pour gagner en confort et mieux contrôler les accès.",
+      description:
+        "J’installe et remplace vos interphones et visiophones pour améliorer le confort, sécuriser les accès et faciliter l’ouverture du portail.",
       image: "/images/Interphone moderne et interaction quotidienne.png",
-      imageAlt: "Personne utilisant un interphone moderne à l'entrée d'une habitation",
+      imageAlt:
+        "Personne utilisant un interphone moderne à l'entrée d'une habitation",
     },
     sections: [
       {
-        eyebrow: "Projet neuf",
-        title: "Un accès pratique depuis l’intérieur",
-        text: "Un interphone ou un visiophone permet d’échanger avec un visiteur sans se déplacer jusqu’au portail. L’emplacement du poste, la distance avec l’entrée et les possibilités de câblage sont étudiés pour une installation cohérente.",
+        eyebrow: "Installation",
+        title: "Répondre à vos visiteurs sans vous déplacer",
+        text: "Un interphone ou un visiophone permet d’identifier un visiteur, d’échanger avec lui et, selon l’installation, de commander l’ouverture du portail ou du portillon. J’étudie l’emplacement des équipements, la distance avec l’entrée et les possibilités de câblage afin de proposer une installation adaptée à votre habitation.",
         image: "/images/Intérieur moderne avec interphone mural.png",
         imageAlt: "Interphone mural dans un intérieur contemporain",
       },
       {
         eyebrow: "Remplacement",
-        title: "Moderniser une installation existante",
-        text: "Un ancien combiné peut devenir difficile à entendre, présenter des coupures ou ne plus commander correctement l’ouverture. Le câblage et les équipements en place sont contrôlés afin de déterminer ce qui peut être conservé.",
+        title: "Moderniser une installation devenue peu fiable",
+        text: "Son faible, image dégradée, coupures ou commande d’ouverture défaillante : un ancien système peut perdre en confort et en fiabilité. Je contrôle le câblage et les équipements existants afin de déterminer ce qui peut être conservé et ce qui doit être remplacé.",
         image: "/images/Moniteur de sécurité moderne et détaillé.png",
         imageAlt: "Écran intérieur moderne pour le contrôle d'un accès",
       },
       {
-        eyebrow: "Contrôle des accès",
-        title: "Relier le visiophone à l’ouverture du portail",
-        text: "Lorsque la configuration le permet, la commande d’ouverture peut être intégrée au système. Le portail, la gâche ou le portillon sont vérifiés pour assurer une utilisation simple et éviter les incompatibilités.",
+        eyebrow: "Ouverture",
+        title: "Piloter le portail ou le portillon depuis le visiophone",
+        text: "Lorsque la configuration le permet, le visiophone peut commander l’ouverture d’un portail, d’un portillon ou d’une gâche électrique. Je vérifie la compatibilité avec la motorisation et les équipements existants pour garantir une utilisation simple et fiable.",
         image: "/images/Entrée moderne avec portail contemporain.png",
         imageAlt: "Entrée de maison équipée d'un portail contemporain",
       },
     ],
     pricing: [
-      { label: "Diagnostic ou remplacement simple", price: "120 € à 350 €", description: "Selon le poste et le câblage réutilisable." },
-      { label: "Installation d’un visiophone", price: "550 € à 1 200 €", description: "Matériel et complexité de liaison à confirmer." },
-      { label: "Commande de portail associée", price: "Sur devis", description: "Selon la motorisation et les équipements existants." },
+      {
+        label: "Diagnostic d’interphonie",
+        price: "À partir de 90 €",
+        description:
+          "Contrôle du poste intérieur, de la platine extérieure, du câblage et de la commande d’ouverture.",
+      },
+      {
+        label: "Remplacement d’un interphone",
+        price: "250 € à 600 €",
+        description:
+          "Selon le matériel choisi et la possibilité de réutiliser le câblage existant.",
+      },
+      {
+        label: "Installation d’un visiophone",
+        price: "550 € à 1 300 €",
+        description:
+          "Selon la distance, le câblage, le matériel et la liaison avec le portail ou le portillon.",
+      },
     ],
-    ctaText: "Étudions une solution adaptée à votre entrée, à votre portail et à vos habitudes quotidiennes.",
+    ctaText:
+      "Décrivez votre entrée, votre installation actuelle et le fonctionnement souhaité afin d’obtenir une solution adaptée et un devis personnalisé.",
     seo: {
-      title: "Installation de visiophone et interphone entre Nîmes et Montpellier",
-      description: "Installation et remplacement de visiophones et interphones entre Nîmes et Montpellier pour améliorer le confort, le contrôle des accès et l’ouverture de portail.",
+      title:
+        "Installation de visiophone et interphone entre Nîmes et Montpellier",
+      description:
+        "Installation et remplacement de visiophones et interphones entre Nîmes et Montpellier pour améliorer le confort, le contrôle des accès et l’ouverture de portail.",
     },
   },
+
   "motorisation-portail": {
     hero: {
-      tagline: "Ouvrez votre portail simplement et en toute sérénité",
-      description: "Motorisation, remplacement et réglage de portails battants ou coulissants, neufs ou déjà installés.",
+      tagline: "Automatisez votre portail pour gagner en confort au quotidien",
+      description:
+        "J’installe, remplace et dépanne les motorisations de portails battants ou coulissants, sur une installation neuve ou existante.",
       image: "/images/Entrée moderne avec portail contemporain.png",
       imageAlt: "Portail automatique à l'entrée d'une maison contemporaine",
     },
+
     sections: [
       {
-        eyebrow: "Équipement",
+        eyebrow: "Installation",
         title: "Motoriser un portail existant",
-        text: "Un portail manuel peut souvent être motorisé après vérification de son état, de sa géométrie et de ses points de fixation. Son poids, ses dimensions, son ouverture et l’alimentation disponible orientent la solution.",
+        text: "Un portail manuel peut souvent être motorisé à condition que sa structure, ses fixations et son fonctionnement soient adaptés. Je vérifie son poids, ses dimensions, son type d’ouverture, l’état des gonds ou du rail ainsi que l’alimentation disponible avant de proposer une solution.",
         image: "/images/Mécanisme moderne de portail coulissant.png",
         imageAlt: "Mécanisme installé sur un portail coulissant",
       },
       {
         eyebrow: "Dépannage",
-        title: "Réparer une motorisation défectueuse",
-        text: "Un portail qui ralentit, s’arrête ou réagit mal nécessite un contrôle méthodique. L’alimentation, les sécurités, les réglages et la mécanique sont vérifiés avant de décider d’une réparation ou d’un remplacement.",
+        title: "Identifier la cause d’un portail qui fonctionne mal",
+        text: "Portail lent, arrêt en cours de mouvement, ouverture irrégulière ou télécommande sans effet : la panne peut venir de l’alimentation, des cellules de sécurité, des réglages, de la carte électronique ou de la mécanique. Je contrôle l’ensemble avant de recommander une réparation ou un remplacement.",
         image: "/images/Réparation du moteur de portail extérieur.png",
         imageAlt: "Intervention sur le moteur extérieur d'un portail",
       },
       {
         eyebrow: "Commandes",
-        title: "Adapter les moyens d’ouverture",
-        text: "Télécommandes, commande intérieure ou clavier d’accès peuvent compléter l’installation. Chaque ajout doit rester compatible avec la motorisation et préserver le fonctionnement des dispositifs de sécurité.",
-        image: "/images/Clavier de sécurité moderne et épuré.png",
+        title: "Choisir les moyens d’ouverture adaptés",
+        text: "Télécommandes, clavier à code, commande intérieure ou liaison avec un visiophone peuvent compléter l’installation. Je vérifie la compatibilité avec la motorisation existante et le bon fonctionnement des dispositifs de sécurité.",
+        image: "/images/Interphone moderne et interaction quotidienne.png",
         imageAlt: "Clavier moderne permettant de commander un accès",
       },
     ],
+
     pricing: [
-      { label: "Diagnostic et réglages", price: "120 € à 250 €", description: "Recherche de panne et ajustements accessibles." },
-      { label: "Motorisation d’un portail existant", price: "900 € à 1 800 €", description: "Selon le portail, le moteur et l’alimentation." },
-      { label: "Remplacement d’une motorisation", price: "650 € à 1 500 €", description: "Après contrôle des équipements conservables." },
+      {
+        label: "Diagnostic de motorisation",
+        price: "À partir de 100 €",
+        description:
+          "Contrôle de l’alimentation, des sécurités, des réglages et du fonctionnement mécanique.",
+      },
+      {
+        label: "Motorisation d’un portail existant",
+        price: "900 € à 1 900 €",
+        description:
+          "Selon le type de portail, le moteur, l’alimentation et les travaux d’adaptation nécessaires.",
+      },
+      {
+        label: "Remplacement d’une motorisation",
+        price: "700 € à 1 600 €",
+        description:
+          "Selon les éléments réutilisables, la motorisation choisie et l’état de l’installation existante.",
+      },
     ],
-    ctaText: "Faites contrôler votre portail pour choisir une motorisation adaptée ou résoudre un fonctionnement irrégulier.",
+
+    ctaText:
+      "Décrivez votre portail et son fonctionnement actuel afin d’obtenir un premier avis sur la motorisation ou le dépannage à prévoir.",
+
     seo: {
       title: "Motorisation de portail entre Nîmes et Montpellier",
-      description: "Installation, remplacement et dépannage de motorisations pour portails battants ou coulissants entre Nîmes et Montpellier, dans le Gard et l’Hérault selon le projet.",
+      description:
+        "Installation, remplacement et dépannage de motorisations pour portails battants ou coulissants entre Nîmes et Montpellier, dans le Gard et l’Hérault selon le projet.",
     },
   },
-  automatismes: {
-    hero: {
-      tagline: "Des équipements automatisés plus simples à utiliser",
-      description: "Installation, adaptation et dépannage de commandes et automatismes d’accès existants.",
-      image: "/images/Réparation du boîtier de contrôle automatique.png",
-      imageAlt: "Technicien intervenant sur un boîtier de contrôle automatique",
-    },
-    sections: [
-      {
-        eyebrow: "Analyse",
-        title: "Comprendre le fonctionnement de l’existant",
-        text: "Avant toute modification, les commandes, alimentations et organes pilotés sont identifiés. Cette étape distingue un défaut de réglage, un accessoire en panne ou un équipement devenu inadapté.",
-        image: "/images/Vérification de la sécurité à domicile.png",
-        imageAlt: "Vérification du fonctionnement d'un équipement automatisé",
-      },
-      {
-        eyebrow: "Modernisation",
-        title: "Faire évoluer sans tout remplacer",
-        text: "Selon l’état de l’installation, certaines commandes peuvent être modernisées en conservant les éléments encore fonctionnels. La priorité reste une solution lisible, fiable et adaptée à l’usage réel.",
-        image: "/images/Réparation du moteur de portail extérieur.png",
-        imageAlt: "Modernisation d'un automatisme d'accès extérieur",
-      },
-      {
-        eyebrow: "Utilisation",
-        title: "Centraliser des commandes pertinentes",
-        text: "Lorsque plusieurs accès ou commandes doivent fonctionner ensemble, leur compatibilité et leur logique d’utilisation sont étudiées. La centralisation n’est proposée que lorsqu’elle simplifie réellement le quotidien.",
-        image: "/images/Mécanisme moderne de portail coulissant.png",
-        imageAlt: "Automatisme installé sur un accès coulissant",
-      },
-    ],
-    pricing: [
-      { label: "Diagnostic d’un automatisme", price: "120 € à 250 €", description: "Contrôle des commandes et du fonctionnement." },
-      { label: "Ajout ou remplacement d’une commande", price: "90 € à 350 €", description: "Selon la compatibilité et le matériel retenu." },
-      { label: "Modernisation d’un système", price: "450 € à 1 600 €", description: "Étendue des éléments à adapter ou remplacer." },
-    ],
-    ctaText: "Présentez-nous votre équipement actuel pour identifier une adaptation simple et durable.",
-    seo: {
-      title: "Installation et dépannage d’automatismes entre Nîmes et Montpellier",
-      description: "Installation, modernisation et dépannage d’automatismes d’accès entre Nîmes et Montpellier pour portails, commandes et équipements existants.",
-    },
-  },
+
   "alarmes-securite": {
     hero: {
-      tagline: "Une protection pensée selon les lieux et les usages",
-      description: "Étude, installation et amélioration de systèmes d’alarme et d’équipements de sécurité.",
-      image: "/images/Boîte d'alarme moderne sur façade.png",
-      imageAlt: "Sirène d'alarme installée sur la façade d'une habitation",
+      tagline: "Une protection adaptée à votre habitation",
+      description:
+        "J’étudie, installe et améliore vos systèmes d’alarme et équipements de sécurité selon la configuration des lieux et vos habitudes.",
+      image: "/images/Vérification de la sécurité à domicile.png",
+      imageAlt:
+        "Main tenant un smartphone affichant les images de caméras de sécurité",
     },
+
     sections: [
       {
-        eyebrow: "Étude du besoin",
+        eyebrow: "Étude",
         title: "Protéger les accès et les zones sensibles",
-        text: "La configuration du bâtiment, ses ouvertures et les habitudes des occupants permettent de définir les zones à surveiller. Le système doit être proportionné au besoin, compréhensible et pratique au quotidien.",
+        text: "Chaque habitation présente des accès, des volumes et des habitudes différents. J’étudie les ouvertures, les zones de passage et les contraintes du logement afin de proposer une protection adaptée, simple à utiliser et proportionnée au besoin.",
         image: "/images/Caméra de sécurité et maison moderne.png",
-        imageAlt: "Équipement de sécurité protégeant une maison moderne",
+        imageAlt: "Maison équipée d'un dispositif de sécurité extérieur",
       },
       {
         eyebrow: "Détection",
-        title: "Positionner les équipements avec cohérence",
-        text: "Détecteurs et sirènes sont placés en tenant compte des passages, des volumes et des contraintes du logement. Une implantation réfléchie évite les équipements inutiles et facilite le contrôle de l’installation.",
+        title: "Positionner les équipements au bon endroit",
+        text: "Détecteurs, sirènes et éléments de commande doivent être installés de manière cohérente pour surveiller les zones utiles sans multiplier les équipements. Je tiens compte des passages, des volumes et de l’usage quotidien du logement.",
         image: "/images/Capteur de mouvement dans un intérieur moderne.png",
         imageAlt: "Capteur de mouvement installé dans un intérieur moderne",
       },
       {
-        eyebrow: "Évolution",
-        title: "Améliorer un système déjà installé",
-        text: "Une installation existante peut être contrôlée lorsque son fonctionnement devient irrégulier ou que les besoins changent. L’état et la compatibilité des composants sont vérifiés avant un remplacement ciblé.",
-        image: "/images/Caméra de sécurité à crépuscule.png",
-        imageAlt: "Équipement de sécurité extérieur au crépuscule",
+        eyebrow: "Pilotage",
+        title: "Garder un œil sur votre habitation à distance",
+        text: "Selon les équipements installés, vous pouvez consulter les caméras et recevoir des alertes directement sur votre smartphone. Je configure le système pour que son utilisation reste simple et adaptée à vos besoins.",
+        image: "/images/Moniteur de sécurité moderne et détaillé.png",
+        imageAlt:
+          "Ecran affichant les images de caméras de sécurité",
       },
     ],
+
     pricing: [
-      { label: "Diagnostic de sécurité", price: "120 € à 250 €", description: "Contrôle d’un système existant et de ses composants." },
-      { label: "Protection essentielle", price: "650 € à 1 400 €", description: "Selon les accès et le nombre d’équipements." },
-      { label: "Installation plus complète", price: "1 200 € à 2 800 €", description: "À préciser après étude de la configuration." },
+      {
+        label: "Diagnostic d’un système d’alarme",
+        price: "À partir de 100 €",
+        description:
+          "Contrôle de la centrale, des détecteurs, des sirènes et des équipements de commande.",
+      },
+      {
+        label: "Protection essentielle",
+        price: "650 € à 1 400 €",
+        description:
+          "Pour une installation simple, selon le nombre d’accès et d’équipements nécessaires.",
+      },
+      {
+        label: "Installation complète",
+        price: "1 200 € à 2 800 €",
+        description:
+          "Selon la surface, les zones à protéger, les détecteurs et les équipements retenus.",
+      },
     ],
-    ctaText: "Échangeons sur les accès à protéger et les équipements présents pour définir une solution adaptée.",
+
+    ctaText:
+      "Décrivez les accès à protéger, la configuration du logement et les équipements déjà présents afin d’obtenir une première estimation.",
+
     seo: {
       title: "Installation d’alarme entre Nîmes et Montpellier",
-      description: "Installation et remplacement de systèmes d’alarme et de sécurité entre Nîmes et Montpellier pour les habitations et les accès.",
+      description:
+        "Installation et remplacement de systèmes d’alarme et de sécurité entre Nîmes et Montpellier pour les habitations et les accès.",
     },
   },
 };
