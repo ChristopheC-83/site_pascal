@@ -13,6 +13,7 @@ import {
   detailedServices,
   getDetailedService,
 } from "@/data/service-details";
+import { createPageMetadata } from "@/lib/seo";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -29,13 +30,18 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const service = getDetailedService(slug);
 
   if (!service) {
-    return { title: "Prestation introuvable | Pascal ALBERT" };
+    notFound();
   }
 
-  return {
+  return createPageMetadata({
     title: service.seo.title,
     description: service.seo.description,
-  };
+    path: `/prestations/${service.slug}`,
+    image: {
+      url: service.image,
+      alt: service.imageAlt,
+    },
+  });
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {

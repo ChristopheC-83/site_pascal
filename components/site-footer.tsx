@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export function SiteFooter() {
   return (
     <footer className="bg-slate-950 text-slate-300">
@@ -24,8 +22,8 @@ export function SiteFooter() {
 
         <nav className="text-sm leading-8" aria-label="Informations légales">
           <p className="mb-2 font-bold uppercase tracking-[0.12em] text-white">Informations</p>
-          <Link className="block hover:text-white" href="#">Mentions légales</Link>
-          <Link className="block hover:text-white" href="#">Politique de confidentialité</Link>
+          <span className="block text-slate-500">Mentions légales{" — à compléter"}</span>
+          <span className="block text-slate-500">Politique de confidentialité{" — à compléter"}</span>
         </nav>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-slate-500">

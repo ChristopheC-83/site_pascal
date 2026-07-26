@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,10 +6,37 @@ import { ServiceCard } from "@/components/service-card";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { services } from "@/data/services";
+import { createPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Antennes, portails, visiophones et sécurité entre Nîmes et Montpellier | Pascal Albert",
+  description:
+    "Pascal Albert intervient entre Nîmes et Montpellier pour l’installation et le dépannage d’antennes TV, visiophones, motorisations de portail, automatismes et alarmes.",
+  path: "/",
+});
+
+const localBusinessJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  telephone: siteConfig.phoneInternational,
+  email: siteConfig.email,
+  address: {
+    "@type": "PostalAddress",
+    ...siteConfig.address,
+  },
+  areaServed: siteConfig.areaServed,
+}).replace(/</g, "\\u003c");
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: localBusinessJsonLd }}
+      />
       <SiteHeader />
       <main>
         <section id="accueil" className="relative isolate flex min-h-[42rem] items-end overflow-hidden sm:min-h-[45rem] lg:min-h-[calc(100svh-9.5rem)]">

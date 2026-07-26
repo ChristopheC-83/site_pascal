@@ -67,8 +67,8 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
     ],
     ctaText: "Faites vérifier votre installation pour retrouver une réception TV stable et adaptée à votre logement.",
     seo: {
-      title: "Antennes et réception TV | Pascal ALBERT",
-      description: "Installation, réglage et dépannage d’antennes et de réception TV entre Nîmes et Montpellier.",
+      title: "Installation et dépannage d’antenne TV entre Nîmes et Montpellier",
+      description: "Installation, remplacement, réglage et dépannage d’antenne TV et de réception TNT entre Nîmes et Montpellier, autour d’Uchaud et selon la configuration existante.",
     },
   },
   "visiophones-interphones": {
@@ -108,8 +108,8 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
     ],
     ctaText: "Étudions une solution adaptée à votre entrée, à votre portail et à vos habitudes quotidiennes.",
     seo: {
-      title: "Visiophones et interphones | Pascal ALBERT",
-      description: "Installation et remplacement de visiophones et interphones entre Nîmes et Montpellier.",
+      title: "Installation de visiophone et interphone entre Nîmes et Montpellier",
+      description: "Installation et remplacement de visiophones et interphones entre Nîmes et Montpellier pour améliorer le confort, le contrôle des accès et l’ouverture de portail.",
     },
   },
   "motorisation-portail": {
@@ -149,8 +149,8 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
     ],
     ctaText: "Faites contrôler votre portail pour choisir une motorisation adaptée ou résoudre un fonctionnement irrégulier.",
     seo: {
-      title: "Motorisation de portail | Pascal ALBERT",
-      description: "Installation, remplacement et dépannage de motorisations de portail entre Nîmes et Montpellier.",
+      title: "Motorisation de portail entre Nîmes et Montpellier",
+      description: "Installation, remplacement et dépannage de motorisations pour portails battants ou coulissants entre Nîmes et Montpellier, dans le Gard et l’Hérault selon le projet.",
     },
   },
   automatismes: {
@@ -190,8 +190,8 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
     ],
     ctaText: "Présentez-nous votre équipement actuel pour identifier une adaptation simple et durable.",
     seo: {
-      title: "Automatismes d’accès | Pascal ALBERT",
-      description: "Installation, modernisation et dépannage d’automatismes d’accès entre Nîmes et Montpellier.",
+      title: "Installation et dépannage d’automatismes entre Nîmes et Montpellier",
+      description: "Installation, modernisation et dépannage d’automatismes d’accès entre Nîmes et Montpellier pour portails, commandes et équipements existants.",
     },
   },
   "alarmes-securite": {
@@ -231,8 +231,8 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
     ],
     ctaText: "Échangeons sur les accès à protéger et les équipements présents pour définir une solution adaptée.",
     seo: {
-      title: "Alarmes et sécurité | Pascal ALBERT",
-      description: "Installation et amélioration de systèmes d’alarme et de sécurité entre Nîmes et Montpellier.",
+      title: "Installation d’alarme entre Nîmes et Montpellier",
+      description: "Installation et remplacement de systèmes d’alarme et de sécurité entre Nîmes et Montpellier pour les habitations et les accès.",
     },
   },
 };

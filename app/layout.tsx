@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { Toaster } from "@/components/ui/sonner";
+import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import "./globals.css";
 import "./site.css";
 
@@ -16,9 +17,51 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pascal ALBERT | Basse tension & automatismes à Uchaud",
-  description:
-    "Installation et dépannage d’antennes, visiophones, motorisations, automatismes et alarmes entre Nîmes et Montpellier.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "Pascal Albert | Antennes, portails, visiophones et sécurité",
+    template: "%s | Pascal Albert",
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  creator: siteConfig.legalName,
+  alternates: { canonical: absoluteUrl("/") },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: siteConfig.name,
+    title: "Pascal Albert | Antennes, portails, visiophones et sécurité",
+    description: siteConfig.description,
+    url: absoluteUrl("/"),
+    images: [
+      {
+        ...siteConfig.openGraphImage,
+        url: absoluteUrl(siteConfig.openGraphImage.url),
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pascal Albert | Antennes, portails, visiophones et sécurité",
+    description: siteConfig.description,
+    images: [
+      {
+        url: absoluteUrl(siteConfig.openGraphImage.url),
+        alt: siteConfig.openGraphImage.alt,
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({

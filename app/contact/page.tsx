@@ -4,11 +4,14 @@ import { ContactForm } from "@/components/contact-form";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { services } from "@/data/services";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact et demande de devis | Pascal ALBERT",
-  description: "Contactez Pascal ALBERT pour un projet ou un dépannage en basse tension, automatismes et sécurité.",
-};
+export const metadata: Metadata = createPageMetadata({
+  title: "Contact et demande de devis entre Nîmes et Montpellier",
+  description:
+    "Contactez Pascal Albert pour un projet ou un dépannage d’antenne, visiophone, motorisation de portail, automatisme ou système de sécurité entre Nîmes et Montpellier.",
+  path: "/contact",
+});
 
 type ContactPageProps = {
   searchParams: Promise<{ service?: string | string[] }>;
