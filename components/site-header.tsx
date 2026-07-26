@@ -39,7 +39,7 @@ export function SiteHeader() {
               Pascal <span className="text-amber-500">ALBERT</span>
             </span>
             <span className="mt-1 block text-[0.68rem] font-medium uppercase tracking-[0.14em] text-slate-300 sm:text-xs">
-              Basse tension <span aria-hidden="true">•</span> Automatismes{" "}
+              Domotique <span aria-hidden="true">•</span> Automatismes{" "}
               <span aria-hidden="true">•</span> Sécurité
             </span>
           </Link>
