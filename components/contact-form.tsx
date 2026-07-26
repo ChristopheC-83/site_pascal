@@ -12,14 +12,20 @@ type FormErrors = Partial<
   Record<"name" | "contact" | "email" | "service" | "message", string>
 >;
 
+type SubmissionStatus = "idle" | "submitting" | "success" | "error";
+
 export function ContactForm({ initialService }: ContactFormProps) {
   const formRef = useRef<HTMLFormElement>(null);
   const [selectedService, setSelectedService] = useState(initialService);
   const [errors, setErrors] = useState<FormErrors>({});
-  const [isPrepared, setIsPrepared] = useState(false);
+  const [status, setStatus] = useState<SubmissionStatus>("idle");
+  const [statusMessage, setStatusMessage] = useState("");
+  const [formStartedAt, setFormStartedAt] = useState(() => Date.now());
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (status === "submitting") return;
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -42,7 +48,8 @@ export function ContactForm({ initialService }: ContactFormProps) {
 
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
-      setIsPrepared(false);
+      setStatus("idle");
+      setStatusMessage("");
 
       const firstInvalidField = nextErrors.name
         ? "name"
@@ -64,15 +71,47 @@ export function ContactForm({ initialService }: ContactFormProps) {
       phone,
       email,
       service,
-      commune: String(formData.get("commune") ?? "").trim(),
+      city: String(formData.get("city") ?? "").trim(),
       message,
+      website: String(formData.get("website") ?? "").trim(),
+      formStartedAt,
     };
 
-    void requestPayload;
     setErrors({});
-    setIsPrepared(true);
-    form.reset();
-    setSelectedService("");
+    setStatus("submitting");
+    setStatusMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestPayload),
+      });
+      const result = (await response.json()) as {
+        success?: boolean;
+        message?: string;
+      };
+
+      if (!response.ok || !result.success) {
+        setStatus("error");
+        setStatusMessage(
+          result.message ||
+            "L’envoi a échoué. Vous pouvez également nous contacter par téléphone.",
+        );
+        return;
+      }
+
+      setStatus("success");
+      setStatusMessage(result.message || "Votre demande a bien été envoyée.");
+      form.reset();
+      setSelectedService("");
+      setFormStartedAt(Date.now());
+    } catch {
+      setStatus("error");
+      setStatusMessage(
+        "L’envoi a échoué. Vous pouvez également nous contacter par téléphone.",
+      );
+    }
   }
 
   const fieldClassName =
@@ -81,11 +120,33 @@ export function ContactForm({ initialService }: ContactFormProps) {
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-6">
-      {isPrepared && (
+      {status === "success" && (
         <div role="status" className="border-l-4 border-amber-500 bg-amber-50 px-5 py-4 text-sm leading-6 text-slate-800">
-          Votre demande a bien été préparée. L’envoi par email sera activé prochainement.
+          {statusMessage}
         </div>
       )}
+
+      {status === "error" && (
+        <div role="alert" className="border-l-4 border-red-700 bg-red-50 px-5 py-4 text-sm leading-6 text-slate-800">
+          {statusMessage}{" "}
+          <a href="tel:+33607568538" className="font-bold underline underline-offset-4">
+            Appelez le 06 07 56 85 38
+          </a>
+          .
+        </div>
+      )}
+
+      <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+        <label htmlFor="website">Site internet</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          maxLength={200}
+        />
+      </div>
 
       <div>
         <label htmlFor="name" className="text-sm font-bold text-slate-900">
@@ -96,6 +157,7 @@ export function ContactForm({ initialService }: ContactFormProps) {
           name="name"
           type="text"
           autoComplete="name"
+          maxLength={100}
           className={fieldClassName}
           aria-invalid={Boolean(errors.name)}
           aria-describedby={errors.name ? "name-error" : undefined}
@@ -116,6 +178,7 @@ export function ContactForm({ initialService }: ContactFormProps) {
               type="tel"
               inputMode="tel"
               autoComplete="tel"
+              maxLength={30}
               className={fieldClassName}
               aria-invalid={Boolean(errors.contact)}
               aria-describedby={errors.contact ? "contact-error" : undefined}
@@ -129,6 +192,7 @@ export function ContactForm({ initialService }: ContactFormProps) {
               type="email"
               inputMode="email"
               autoComplete="email"
+              maxLength={200}
               className={fieldClassName}
               aria-invalid={Boolean(errors.contact || errors.email)}
               aria-describedby={errors.email ? "email-error" : errors.contact ? "contact-error" : undefined}
@@ -163,12 +227,13 @@ export function ContactForm({ initialService }: ContactFormProps) {
         </div>
 
         <div>
-          <label htmlFor="commune" className="text-sm font-bold text-slate-900">Commune</label>
+          <label htmlFor="city" className="text-sm font-bold text-slate-900">Commune</label>
           <input
-            id="commune"
-            name="commune"
+            id="city"
+            name="city"
             type="text"
             autoComplete="address-level2"
+            maxLength={100}
             className={fieldClassName}
           />
         </div>
@@ -182,6 +247,7 @@ export function ContactForm({ initialService }: ContactFormProps) {
           id="message"
           name="message"
           rows={7}
+          maxLength={3000}
           className={`${fieldClassName} resize-y py-3`}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "message-error" : undefined}
@@ -190,14 +256,15 @@ export function ContactForm({ initialService }: ContactFormProps) {
       </div>
 
       <p className="text-xs leading-5 text-slate-500">
-        Les champs marqués d’un astérisque sont obligatoires. Ce formulaire prépare actuellement votre demande sans l’envoyer.
+        Les champs marqués d’un astérisque sont obligatoires.
       </p>
 
       <button
         type="submit"
-        className="inline-flex min-h-14 w-full items-center justify-center bg-slate-950 px-7 text-sm font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600 sm:w-auto"
+        disabled={status === "submitting"}
+        className="inline-flex min-h-14 w-full items-center justify-center bg-slate-950 px-7 text-sm font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
-        Préparer ma demande de devis
+        {status === "submitting" ? "Envoi en cours…" : "Envoyer ma demande de devis"}
       </button>
     </form>
   );
