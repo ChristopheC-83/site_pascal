@@ -36,7 +36,7 @@ export function SiteHeader() {
             aria-label="Pascal Albert, accueil"
           >
             <span className="block font-heading text-xl font-bold tracking-[0.08em] sm:text-2xl">
-              PASCAL <span className="text-amber-500">ALBERT</span>
+              Pascal <span className="text-amber-500">ALBERT</span>
             </span>
             <span className="mt-1 block text-[0.68rem] font-medium uppercase tracking-[0.14em] text-slate-300 sm:text-xs">
               Basse tension <span aria-hidden="true">•</span> Automatismes{" "}

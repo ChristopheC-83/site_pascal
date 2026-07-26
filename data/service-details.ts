@@ -66,13 +66,13 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
     pricing: [
       {
         label: "Diagnostic de réception",
-        price: "À partir de 90 €",
+        price: "À partir de 80 €",
         description:
           "Déplacement, contrôle du signal, de l’antenne et du réseau intérieur existant.",
       },
       {
         label: "Remplacement d’antenne",
-        price: "250 € à 650 €",
+        price: "250 € à 500 €",
         description:
           "Selon l’accès à la toiture, la fixation, le câblage et le matériel nécessaire.",
       },
@@ -129,7 +129,7 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
     pricing: [
       {
         label: "Diagnostic d’interphonie",
-        price: "À partir de 90 €",
+        price: "À partir de 80 €",
         description:
           "Contrôle du poste intérieur, de la platine extérieure, du câblage et de la commande d’ouverture.",
       },
@@ -141,7 +141,7 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
       },
       {
         label: "Installation d’un visiophone",
-        price: "550 € à 1 300 €",
+        price: "550 € à 800 €",
         description:
           "Selon la distance, le câblage, le matériel et la liaison avec le portail ou le portillon.",
       },
@@ -155,7 +155,6 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
         "Installation et remplacement de visiophones et interphones entre Nîmes et Montpellier pour améliorer le confort, le contrôle des accès et l’ouverture de portail.",
     },
   },
-
   "motorisation-portail": {
     hero: {
       tagline: "Automatisez votre portail pour gagner en confort au quotidien",
@@ -192,7 +191,7 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
     pricing: [
       {
         label: "Diagnostic de motorisation",
-        price: "À partir de 100 €",
+        price: "À partir de 80 €",
         description:
           "Contrôle de l’alimentation, des sécurités, des réglages et du fonctionnement mécanique.",
       },
@@ -219,7 +218,6 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
         "Installation, remplacement et dépannage de motorisations pour portails battants ou coulissants entre Nîmes et Montpellier, dans le Gard et l’Hérault selon le projet.",
     },
   },
-
   "alarmes-securite": {
     hero: {
       tagline: "Une protection adaptée à votre habitation",
@@ -258,7 +256,7 @@ const editorialBySlug: Record<Service["slug"], EditorialDetails> = {
     pricing: [
       {
         label: "Diagnostic d’un système d’alarme",
-        price: "À partir de 100 €",
+        price: "À partir de 80 €",
         description:
           "Contrôle de la centrale, des détecteurs, des sirènes et des équipements de commande.",
       },

@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] lg:px-10 lg:py-16">
         <div>
           <p className="font-heading text-xl font-bold tracking-[0.08em] text-white">
-            PASCAL <span className="text-amber-500">ALBERT</span>
+            Pascal <span className="text-amber-500">ALBERT</span>
           </p>
           <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">
             Installation et dépannage en basse tension, automatismes et sécurité entre Nîmes et Montpellier.
