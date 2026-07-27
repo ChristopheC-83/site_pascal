@@ -1,4 +1,4 @@
-const fallbackSiteUrl = "https://site-pascal.vercel.app";
+const fallbackSiteUrl = "https://www.pascal-domotique.fr/";
 
 function normalizeSiteUrl(value: string | undefined) {
   try {
