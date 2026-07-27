@@ -1,8 +1,9 @@
-const fallbackSiteUrl = "https://www.pascal-domotique.fr/";
+const fallbackSiteUrl = "https://www.pascal-domotique.fr";
 
 function normalizeSiteUrl(value: string | undefined) {
   try {
     const url = new URL(value?.trim() || fallbackSiteUrl);
+
     url.hash = "";
     url.search = "";
 
@@ -16,7 +17,7 @@ export const siteConfig = {
   name: "Pascal Albert",
   legalName: "Pascal ALBERT",
   description:
-    "Installation et dépannage d’antennes, visiophones, motorisations de portail, automatismes et systèmes de sécurité autour de Nîmes et Montpellier.",
+    "Installation et dépannage d’antennes, visiophones, motorisations de portail et systèmes de sécurité entre Nîmes et Montpellier.",
   url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
   phone: "06 07 56 85 38",
   phoneInternational: "+33607568538",
