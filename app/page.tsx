@@ -111,12 +111,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-6">
-              {services.map((service, index) => (
-                <div
-                  key={service.slug}
-                  className={index < 3 ? "xl:col-span-2" : "xl:col-span-3"}
-                >
+            <div className="grid gap-4 md:grid-cols-2">
+              {services.map((service) => (
+                <div key={service.slug}>
                   <ServiceCard service={service} />
                 </div>
               ))}

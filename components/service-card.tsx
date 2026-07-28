@@ -5,7 +5,7 @@ import type { Service } from "@/data/services";
 
 export function ServiceCard({ service }: { service: Service }) {
   return (
-    <article className="group relative min-h-96 overflow-hidden bg-slate-900 sm:min-h-[28rem]">
+    <article className="group relative h-full min-h-96 overflow-hidden bg-slate-900 sm:min-h-[28rem]">
       <Image
         src={service.image}
         alt={service.imageAlt}
